@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/tr.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      ThinkerRoot Ideathon 2025 - India's Premier Innovation Challenge
+    </title>
+    <meta
+      name="description"
+      content="Join ThinkerRoot Ideathon 2025, India's one-of-a-kind innovation challenge! Empowering Indian developers, thinkers, and creators to build impactful solutions across 6 groundbreaking themes. Register now!"
+    />
+    <meta name="theme-color" content="#27272a" />
+    <link rel="apple-touch-icon" href="/tr.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="keywords"
+      content="ThinkerRoot Ideathon 2025, India Ideathon, Indian innovation, developers India, thinkers creators India, technology competition India, hackathon India, startup competition, tech events India, innovation challenge"
+    />
+
+    <!-- Open Graph Tags - Updated for WhatsApp & LinkedIn compatibility -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ThinkerRoot India" />
+    <meta
+      property="og:title"
+      content="ThinkerRoot Ideathon 2025 - India's Premier Innovation Challenge"
+    />
+    <meta
+      property="og:description"
+      content="Join ThinkerRoot Ideathon 2025, India's one-of-a-kind innovation challenge! Empowering Indian developers, thinkers, and creators to build impactful solutions across 6 groundbreaking themes. Register now!"
+    />
+    <meta property="og:url" content="https://thinker-root-2025.vercel.app/" />
+    <meta property="fb:app_id" content="0" />
+
+    <!-- Image meta tags - Critical for WhatsApp & LinkedIn -->
+    <meta
+      property="og:image"
+      content="https://thinker-root-2025.vercel.app/poster-min.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://thinker-root-2025.vercel.app/poster-min.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta
+      property="og:image:alt"
+      content="ThinkerRoot Ideathon 2025 - India's Premier Innovation Challenge | Join the future of tech innovation"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@thinkerroot" />
+    <meta
+      name="twitter:title"
+      content="ThinkerRoot Ideathon 2025 - India's Premier Innovation Challenge"
+    />
+    <meta
+      name="twitter:description"
+      content="Join ThinkerRoot Ideathon 2025, India's one-of-a-kind innovation challenge! Empowering Indian developers, thinkers, and creators to build impactful solutions across 6 groundbreaking themes."
+    />
+    <meta
+      name="twitter:image"
+      content="https://thinker-root-2025.vercel.app/poster-min.png"
+    />
+
+    <!-- LinkedIn-specific meta tags -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta name="linkedin:owner" content="" />
+    <meta property="article:author" content="ThinkerRoot" />
+    <meta property="article:publisher" content="ThinkerRoot" />
+    <meta name="author" content="ThinkerRoot Team" />
+
+    <!-- Additional WhatsApp-specific optimizations -->
+    <meta property="og:locale" content="en_IN" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://thinker-root-2025.vercel.app/" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+              display: ["Orbitron", "sans-serif"],
+            },
+            animation: {
+              "gradient-bg": "gradient-bg 15s ease infinite",
+              "gradient-text": "gradient-text 5s ease infinite",
+              "pulse-slow":
+                "pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            },
+            keyframes: {
+              "gradient-bg": {
+                "0%, 100%": { backgroundPosition: "0% 50%" },
+                "50%": { backgroundPosition: "100% 50%" },
+              },
+              "gradient-text": {
+                "0%, 100%": {
+                  "background-size": "200% 200%",
+                  "background-position": "left center",
+                },
+                "50%": {
+                  "background-size": "200% 200%",
+                  "background-position": "right center",
+                },
+              },
+              "pulse-slow": {
+                "0%, 100%": { opacity: 1 },
+                "50%": { opacity: 0.85 },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        background-color: #27272a; /* Fallback matte brown */
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+      ::selection {
+        background-color: #ef4444; /* Tailwind red-500 */
+        color: #ffffff;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://aistudiocdn.com/react@18.2.0",
+          "react/": "https://aistudiocdn.com/react@18.2.0/",
+          "react-dom/client": "https://aistudiocdn.com/react-dom@18.2.0/client",
+          "react-dom/": "https://aistudiocdn.com/react-dom@18.2.0/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
