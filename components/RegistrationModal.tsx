@@ -321,12 +321,12 @@ We invite you to join us in shaping the future through innovation.
             <div className="mt-4 space-y-4">
               <div className="flex flex-col items-center space-y-2">
                 <img
-                  src="/payment.jpeg"
+                  src="/payment2.png"
                   alt="Payment QR Code"
                   className="w-48 h-48 object-contain rounded-md"
                 />
                 <p className="text-zinc-400 text-xs text-center max-w-xs">
-                  Scan the QR code above to make your payment (₹50). Upload the
+                  Scan the QR code above to make your payment (₹250). Upload the
                   payment screenshot below.
                 </p>
               </div>

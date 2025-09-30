@@ -26,10 +26,10 @@ const EventDetails = () => {
                         Virtual / Global
                     </DetailCard>
                     <DetailCard icon={<CalendarIcon />} title="Event Dates">
-                        October 4th - 6th, 2025
+                        December 26 th, 2025
                     </DetailCard>
                     <DetailCard icon={<ClockIcon />} title="Submission Deadline">
-                        September 28th, 2025
+                        October 20th, 2025
                     </DetailCard>
                 </div>
             </Section>

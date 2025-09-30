@@ -69,7 +69,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           >
             Register Now
           </button>
-          <span className="mt-2 text-zinc-400 text-lg font-medium">₹50 per Team</span>
+          <span className="mt-2 text-zinc-400 text-lg font-medium">₹250 per Team</span>
         </div>
 
         {/* Prize Pool Section */}
