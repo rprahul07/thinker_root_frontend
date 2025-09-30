@@ -13,7 +13,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
   // Fetch live registration count
   useEffect(() => {
     const fetchCount = async () => {
-      const url = process.env.VITE_API_URL || "http://13.60.67.45:5003";
+      const url = process.env.VITE_API_URL || "https://lenienttree.in";
       try {
         const res = await fetch(`${url}/api/applications/count`); // teammate API
         const data = await res.json();

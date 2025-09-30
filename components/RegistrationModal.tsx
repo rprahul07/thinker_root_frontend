@@ -20,7 +20,7 @@ const RegistrationModal = ({
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const url = process.env.VITE_API_URL || "http://13.60.67.45:5003";
+    const url = process.env.VITE_API_URL || "https://lenienttree.in";
 
     if (!paymentProof || !linkedinLink) {
       alert("Please upload all mandatory details");
