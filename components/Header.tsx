@@ -28,9 +28,9 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
   }, []);
 
   // ✅ Fixed prize amounts
-  const firstPrize = 5000;
-  const secondPrize = 3000;
-  const thirdPrize = 1000;
+  const firstPrize = 50000;
+  const secondPrize = 25000;
+  const thirdPrize = 10000;
 
   return (
     <header className="relative min-h-screen flex flex-col items-center text-center px-4 overflow-hidden pt-20 md:pt-36">
