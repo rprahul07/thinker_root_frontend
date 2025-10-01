@@ -86,7 +86,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           <p className="relative text-5xl md:text-6xl font-bold text-yellow-300 mb-4 animate-pulse">
             ₹10,000
           </p>
-          <p className="relative text-[#3f3f46] text-lg md:text-xl font-semibold">
+          <p className="relative text-[#D4D4D8] text-lg md:text-xl font-semibold">
             Each of the Top 7 Participants will receive this prize!
           </p>
         </motion.div>
