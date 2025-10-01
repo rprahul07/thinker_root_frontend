@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface HeaderProps {
   onRegisterClick: () => void;
@@ -15,11 +13,11 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
     const fetchCount = async () => {
       const url = process.env.VITE_API_URL || "https://lenienttree.in";
       try {
-        const res = await fetch(`${url}/api/applications/count`); // teammate API
+        const res = await fetch(`${url}/api/applications/count`);
         const data = await res.json();
         setRegistrationCount(data.count || 0);
       } catch (err) {
-        console.error('Failed to fetch registration count', err);
+        console.error("Failed to fetch registration count", err);
       }
     };
     fetchCount();
@@ -27,20 +25,24 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
     return () => clearInterval(interval);
   }, []);
 
-  // ✅ Fixed prize amounts
-  const firstPrize = 50000;
-  const secondPrize = 25000;
-  const thirdPrize = 10000;
+  // 7 prizes of ₹10,000
+  const prizes = Array.from({ length: 7 }, (_, i) => ({
+    label: `${i + 1}${getOrdinalSuffix(i + 1)} Prize`,
+    amount: 10000,
+    colorFrom: gradientColors[i % gradientColors.length].from,
+    colorTo: gradientColors[i % gradientColors.length].to,
+  }));
 
   return (
     <header className="relative min-h-screen flex flex-col items-center text-center px-4 overflow-hidden pt-20 md:pt-36">
       {/* Background Grid + Radial Glow */}
-      <div className="absolute inset-0 w-full h-full bg-zinc-900 
+      <div
+        className="absolute inset-0 w-full h-full bg-zinc-900 
         bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),
         linear-gradient(to_bottom,#80808012_1px,transparent_1px)] 
         bg-[size:14px_24px] 
-        [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]">
-      </div>
+        [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"
+      ></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(239,68,68,0.25),_transparent_70%)]"></div>
 
       {/* Hero Section */}
@@ -50,8 +52,9 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
         </h1>
 
         <p className="max-w-3xl mx-auto text-lg md:text-xl text-zinc-300">
-          A one of a kind hackathon designed to nurture core innovation. Empowering developers,
-          thinkers, and creators to build impactful solutions.
+          A one of a kind hackathon designed to nurture core innovation.
+          Empowering developers, thinkers, and creators to build impactful
+          solutions.
         </p>
 
         {/* Live Registration Count */}
@@ -59,7 +62,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           🔥 {registrationCount} teams registered so far
         </p>
 
-        {/* Button with ₹50 below */}
+        {/* Button with ₹250 below */}
         <div className="flex flex-col items-center pt-4">
           <button
             onClick={onRegisterClick}
@@ -69,39 +72,32 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           >
             Register Now
           </button>
-          <span className="mt-2 text-zinc-400 text-lg font-medium">₹250 per Team</span>
+          <span className="mt-2 text-zinc-400 text-lg font-medium">
+            ₹250 per Team
+          </span>
         </div>
 
         {/* Prize Pool Section */}
-        <div className="mt-10 max-w-md mx-auto">
+        <div className="mt-12 w-full max-w-5xl">
           <motion.h2
-            className="text-white text-xl font-semibold mb-4 text-center"
+            className="text-white text-2xl md:text-3xl font-semibold mb-6 text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
             Prize Pool
           </motion.h2>
 
-          {/* Stack the prize cards vertically */}
-          <div className="flex flex-col gap-4">
-            <PrizeCard
-              label="1st Prize"
-              amount={firstPrize}
-              colorFrom="from-red-500"
-              colorTo="to-orange-400"
-            />
-            <PrizeCard
-              label="2nd Prize"
-              amount={secondPrize}
-              colorFrom="from-orange-400"
-              colorTo="to-yellow-300"
-            />
-            <PrizeCard
-              label="3rd Prize"
-              amount={thirdPrize}
-              colorFrom="from-yellow-300"
-              colorTo="to-green-400"
-            />
+          {/* Responsive grid for symmetry */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
+            {prizes.map((p) => (
+              <PrizeCard
+                key={p.label}
+                label={p.label}
+                amount={p.amount}
+                colorFrom={p.colorFrom}
+                colorTo={p.colorTo}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -111,9 +107,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
 
 export default Header;
 
-/** 
- * A dynamic glowing card for prize pools
- */
+/** PrizeCard component */
 const PrizeCard = ({
   label,
   amount,
@@ -131,12 +125,14 @@ const PrizeCard = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.05 }}
-      className={`relative rounded-xl p-4 bg-zinc-900/60 backdrop-blur-md border border-zinc-700`}
+      className={`relative rounded-xl p-6 bg-zinc-900/70 backdrop-blur-md border border-zinc-700 shadow-lg`}
     >
       <div
         className={`absolute inset-0 rounded-xl bg-gradient-to-br ${colorFrom} ${colorTo} opacity-10 blur-xl`}
       />
-      <h3 className="text-sm text-zinc-400 font-medium mb-1">{label}</h3>
+      <h3 className="text-sm md:text-base text-zinc-400 font-medium mb-2">
+        {label}
+      </h3>
       <AnimatePresence mode="wait">
         <motion.p
           key={amount}
@@ -146,9 +142,35 @@ const PrizeCard = ({
           transition={{ duration: 0.3 }}
           className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${colorFrom} ${colorTo} bg-clip-text text-transparent`}
         >
-          ₹{amount.toLocaleString('en-IN')}
+          ₹{amount.toLocaleString("en-IN")}
         </motion.p>
       </AnimatePresence>
     </motion.div>
   );
 };
+
+/** Helper for ordinal suffix */
+function getOrdinalSuffix(n: number): string {
+  if (n % 100 >= 11 && n % 100 <= 13) return "th";
+  switch (n % 10) {
+    case 1:
+      return "st";
+    case 2:
+      return "nd";
+    case 3:
+      return "rd";
+    default:
+      return "th";
+  }
+}
+
+/** Gradient color palette */
+const gradientColors = [
+  { from: "from-red-500", to: "to-orange-400" },
+  { from: "from-orange-400", to: "to-yellow-300" },
+  { from: "from-yellow-300", to: "to-green-400" },
+  { from: "from-green-400", to: "to-teal-400" },
+  { from: "from-teal-400", to: "to-blue-400" },
+  { from: "from-blue-400", to: "to-purple-400" },
+  { from: "from-purple-400", to: "to-pink-400" },
+];

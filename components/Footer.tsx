@@ -52,6 +52,11 @@ const Footer = () => {
     { href: '#special', label: 'Features' },
   ];
 
+  const contactDetails = {
+    phone: '+91 8590147224',
+    email: 'info@thinkerroot.com',
+  };
+
   return (
     <footer className="relative border-t border-zinc-800 mt-20 pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0 w-full h-full bg-zinc-900 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
@@ -67,7 +72,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Quick Links & Contact */}
           <div className="text-center">
             <h3 className="font-display text-lg font-semibold text-zinc-200 tracking-wider">
               Quick Links
@@ -84,6 +89,28 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+
+            {/* Contact Details */}
+            <div className="mt-6 text-zinc-400">
+              <p>
+                <strong>Phone:</strong>{' '}
+                <a
+                  href={`tel:${contactDetails.phone}`}
+                  className="hover:text-red-500 transition-colors duration-300"
+                >
+                  {contactDetails.phone}
+                </a>
+              </p>
+              <p className="mt-1">
+                <strong>Email:</strong>{' '}
+                <a
+                  href={`mailto:${contactDetails.email}`}
+                  className="hover:text-red-500 transition-colors duration-300"
+                >
+                  {contactDetails.email}
+                </a>
+              </p>
+            </div>
           </div>
 
           {/* Column 3: Social Links */}
