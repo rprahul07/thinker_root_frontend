@@ -17,6 +17,29 @@ const RegistrationModal = ({
   const [paymentProof, setPaymentProof] = useState<File | null>(null);
   const [linkedinLink, setLinkedinLink] = useState<string>("");
 
+  const linkedinText = `𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025 – 𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧 Coming soon
+
+📅 Date: 26th December 2025
+
+LENIENT TREE is delighted to announce the opening of registrations for the 𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025.
+As the driving force behind this initiative, LenientTree is committed to fostering a culture of 𝐈𝐧𝐧𝐨𝐯𝐚𝐭𝐢𝐨𝐧 and 𝐄𝐧𝐭𝐫𝐞𝐩𝐫𝐞𝐧𝐞𝐮𝐫𝐬𝐡𝐢𝐩 by providing a platform where:
+
+• Innovators can present transformative ideas
+• Participants can collaborate with peers and industry mentors
+• Teams can develop practical solutions with real-world impact
+
+This ideathon reflects LENIENT TREE vision of enabling students, entrepreneurs, and changemakers to transform ideas into meaningful outcomes.
+
+We invite you to join us in shaping the future through innovation.
+
+#𝐋𝐞𝐧𝐢𝐞𝐧𝐭𝐓𝐫𝐞𝐞 #𝐓𝐡𝐢𝐧𝐤𝐞𝐫𝐑𝐨𝐨𝐭 #𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧2025 #𝐈𝐧𝐧𝐨𝐯𝐚𝐭𝐢𝐨𝐧 #𝐄𝐧𝐭𝐫𝐞𝐩𝐫𝐞𝐧𝐞𝐮𝐫𝐬𝐡𝐢𝐩 #𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧𝐬𝐎𝐩𝐞𝐧`;
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(linkedinText).then(() => {
+      alert("Post content copied! You can now paste it on LinkedIn.");
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -27,7 +50,6 @@ const RegistrationModal = ({
       return;
     }
 
-    // build formData manually to avoid name mismatch
     const form = e.currentTarget;
     const formData = new FormData();
 
@@ -42,7 +64,6 @@ const RegistrationModal = ({
     formData.append("skills", (form as any).skills.value);
     formData.append("motivation", (form as any).motivation.value);
 
-    // ✅ names exactly what multer expects:
     formData.append("linkedinLink", linkedinLink);
     formData.append("payment_screenshot", paymentProof);
 
@@ -71,24 +92,6 @@ const RegistrationModal = ({
   const legendClasses =
     "text-lg font-medium text-zinc-100 mb-2 w-full border-b border-zinc-700 pb-2";
 
-  const linkedinText = `𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025 – 𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧𝐬 𝐎𝐩𝐞𝐧
-
-📅 Date: 26th December 2025
-🔗 Register here: https://lnkd.in/gg39mZqb
-
-𝐋𝐞𝐧𝐢𝐞𝐧𝐭𝐓𝐫𝐞𝐞 is delighted to announce the opening of registrations for the 𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025.
-As the driving force behind this initiative, LenientTree is committed to fostering a culture of 𝐈𝐧𝐧𝐨𝐯𝐚𝐭𝐢𝐨𝐧 and 𝐄𝐧𝐭𝐫𝐞𝐩𝐫𝐞𝐧𝐞𝐮𝐫𝐬𝐡𝐢𝐩 by providing a platform where:
-
-• Innovators can present transformative ideas
-• Participants can collaborate with peers and industry mentors
-• Teams can develop practical solutions with real-world impact
-
-This ideathon reflects 𝐋𝐞𝐧𝐢𝐞𝐧𝐭𝐓𝐫𝐞𝐞 vision of enabling students, entrepreneurs, and changemakers to transform ideas into meaningful outcomes.
-
-We invite you to join us in shaping the future through innovation.
-
-#𝐋𝐞𝐧𝐢𝐞𝐧𝐭𝐓𝐫𝐞𝐞 #𝐓𝐡𝐢𝐧𝐤𝐞𝐫𝐑𝐨𝐨𝐭 #𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧2025 #𝐈𝐧𝐧𝐨𝐯𝐚𝐭𝐢𝐨𝐧 #𝐄𝐧𝐭𝐫𝐞𝐩𝐫𝐞𝐧𝐞𝐮𝐫𝐬𝐡𝐢𝐩 #𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧𝐬𝐎𝐩𝐞𝐧`;
-
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
@@ -101,6 +104,7 @@ We invite you to join us in shaping the future through innovation.
         className="bg-zinc-800 rounded-lg shadow-2xl shadow-red-900/20 w-full max-w-2xl border border-zinc-700 relative max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Header */}
         <div className="sticky top-0 bg-zinc-800/80 backdrop-blur-sm z-10 p-8 pb-6">
           <button
             onClick={onClose}
@@ -117,13 +121,24 @@ We invite you to join us in shaping the future through innovation.
           </h2>
 
           <div className="mt-4 flex flex-col md:flex-row gap-4 justify-center">
+            {/* Copy Content Button */}
+            <button
+              onClick={handleCopy}
+              className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300"
+            >
+              📋 Copy LinkedIn Post Content
+            </button>
+
+            {/* Download Template */}
             <a
-              href="/poster.png"
+              href={`/poster.png`}
               download
               className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300"
             >
-              📥 Download LinkedIn Post Template
+              📥 Download Post Template
             </a>
+
+            {/* Share to LinkedIn */}
             <a
               href={`https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(
                 linkedinText
@@ -137,7 +152,9 @@ We invite you to join us in shaping the future through innovation.
           </div>
         </div>
 
+        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-8 p-8 pt-0">
+          {/* Personal Information */}
           <fieldset>
             <legend className={legendClasses}>Personal Information</legend>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -168,6 +185,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
+          {/* Contact Information */}
           <fieldset>
             <legend className={legendClasses}>Contact Information</legend>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -198,6 +216,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
+          {/* Professional Background */}
           <fieldset>
             <legend className={legendClasses}>Professional Background</legend>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -226,6 +245,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
+          {/* Innovation Preferences */}
           <fieldset>
             <legend className={legendClasses}>Innovation Preferences</legend>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -265,6 +285,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
+          {/* Skills & Motivation */}
           <fieldset>
             <legend className={legendClasses}>Skills & Motivation</legend>
             <div className="space-y-4 mt-4">
@@ -295,6 +316,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
+          {/* LinkedIn Link */}
           <fieldset>
             <legend className={legendClasses}>Social Media Link *</legend>
             <div className="space-y-4 mt-4">
@@ -316,6 +338,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
+          {/* Payment */}
           <fieldset>
             <legend className={legendClasses}>Payment *</legend>
             <div className="mt-4 space-y-4">
@@ -337,7 +360,7 @@ We invite you to join us in shaping the future through innovation.
               <input
                 type="file"
                 id="paymentScreenshot"
-                name="payment_screenshot" // ✅ matches backend
+                name="payment_screenshot"
                 accept="image/*"
                 required
                 onChange={(e) => setPaymentProof(e.target.files?.[0] ?? null)}
