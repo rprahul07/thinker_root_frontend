@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 interface HeaderProps {
   onRegisterClick: () => void;
@@ -24,14 +23,6 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
     const interval = setInterval(fetchCount, 30000);
     return () => clearInterval(interval);
   }, []);
-
-  // 7 prizes of ₹10,000
-  const prizes = Array.from({ length: 7 }, (_, i) => ({
-    label: `${i + 1}${getOrdinalSuffix(i + 1)} Prize`,
-    amount: 10000,
-    colorFrom: gradientColors[i % gradientColors.length].from,
-    colorTo: gradientColors[i % gradientColors.length].to,
-  }));
 
   return (
     <header className="relative min-h-screen flex flex-col items-center text-center px-4 overflow-hidden pt-20 md:pt-36">
@@ -77,34 +68,14 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           </span>
         </div>
 
-        {/* Prize Pool Section */}
-        <div className="mt-12 w-full max-w-5xl">
-          <motion.h2
-            className="text-white text-2xl md:text-3xl font-semibold mb-6 text-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            Prize Pool
-          </motion.h2>
-
-          {/* Responsive grid with 7th prize centered */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
-            {prizes.map((p, index) => {
-              // Center the 7th prize
-              const centerClass =
-                index === 6 ? "sm:col-start-2 md:col-start-2 lg:col-start-3" : "";
-              return (
-                <PrizeCard
-                  key={p.label}
-                  label={p.label}
-                  amount={p.amount}
-                  colorFrom={p.colorFrom}
-                  colorTo={p.colorTo}
-                  className={centerClass}
-                />
-              );
-            })}
-          </div>
+        {/* Top 7 Winners */}
+        <div className="mt-12 text-center">
+          <h2 className="text-white text-2xl md:text-3xl font-semibold mb-4">
+            Top 7 Participants
+          </h2>
+          <p className="text-zinc-300 text-lg md:text-xl">
+            Each of the top 7 participants will win <span className="font-bold text-red-500">₹10,000</span>!
+          </p>
         </div>
       </div>
     </header>
@@ -112,73 +83,3 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
 };
 
 export default Header;
-
-/** PrizeCard component */
-const PrizeCard = ({
-  label,
-  amount,
-  colorFrom,
-  colorTo,
-  className = "",
-}: {
-  label: string;
-  amount: number;
-  colorFrom: string;
-  colorTo: string;
-  className?: string;
-}) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.05 }}
-      className={`relative rounded-xl p-6 bg-zinc-900/70 backdrop-blur-md border border-zinc-700 shadow-lg ${className}`}
-    >
-      <div
-        className={`absolute inset-0 rounded-xl bg-gradient-to-br ${colorFrom} ${colorTo} opacity-10 blur-xl`}
-      />
-      <h3 className="text-sm md:text-base text-zinc-400 font-medium mb-2">
-        {label}
-      </h3>
-      <AnimatePresence mode="wait">
-        <motion.p
-          key={amount}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.3 }}
-          className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${colorFrom} ${colorTo} bg-clip-text text-transparent`}
-        >
-          ₹{amount.toLocaleString("en-IN")}
-        </motion.p>
-      </AnimatePresence>
-    </motion.div>
-  );
-};
-
-/** Helper for ordinal suffix */
-function getOrdinalSuffix(n: number): string {
-  if (n % 100 >= 11 && n % 100 <= 13) return "th";
-  switch (n % 10) {
-    case 1:
-      return "st";
-    case 2:
-      return "nd";
-    case 3:
-      return "rd";
-    default:
-      return "th";
-  }
-}
-
-/** Gradient color palette */
-const gradientColors = [
-  { from: "from-red-500", to: "to-orange-400" },
-  { from: "from-orange-400", to: "to-yellow-300" },
-  { from: "from-yellow-300", to: "to-green-400" },
-  { from: "from-green-400", to: "to-teal-400" },
-  { from: "from-teal-400", to: "to-blue-400" },
-  { from: "from-blue-400", to: "to-purple-400" },
-  { from: "from-purple-400", to: "to-pink-400" },
-];
