@@ -53,7 +53,7 @@ const Footer = () => {
   ];
 
   const contactDetails = {
-    phone: '+91 8590147224',
+    phone: '+91 8590944049',
     email: 'augustinevadakumchery@lenienttree.com',
   };
 
