@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 interface HeaderProps {
   onRegisterClick: () => void;
@@ -68,15 +69,23 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           </span>
         </div>
 
-        {/* Top 7 Winners */}
-        <div className="mt-12 text-center">
-          <h2 className="text-white text-2xl md:text-3xl font-semibold mb-4">
-            Top 7 Participants
+        {/* Grand Prize Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mt-12 px-6 py-6 md:px-12 md:py-8 rounded-xl bg-gradient-to-r from-red-500 to-orange-400 shadow-2xl text-center max-w-md"
+        >
+          <h2 className="text-white text-2xl md:text-3xl font-extrabold mb-2">
+            Grand Prize
           </h2>
-          <p className="text-zinc-300 text-lg md:text-xl">
-            Each of the top 7 participants will win <span className="font-bold text-red-500">₹10,000</span>!
+          <p className="text-4xl md:text-5xl font-bold text-yellow-300 mb-2 animate-pulse">
+            ₹10,000
           </p>
-        </div>
+          <p className="text-white text-lg md:text-xl font-semibold">
+            For each of the Top 7 Participants
+          </p>
+        </motion.div>
       </div>
     </header>
   );
