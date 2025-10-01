@@ -8,6 +8,7 @@ interface HeaderProps {
 const Header = ({ onRegisterClick }: HeaderProps) => {
   const [registrationCount, setRegistrationCount] = useState<number>(0);
 
+  // Fetch live registration count
   useEffect(() => {
     const fetchCount = async () => {
       const url = process.env.VITE_API_URL || "https://lenienttree.in";
@@ -26,8 +27,9 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
 
   return (
     <header className="relative min-h-screen flex flex-col items-center text-center px-4 overflow-hidden pt-20 md:pt-36">
-      {/* Background */}
-      <div className="absolute inset-0 w-full h-full bg-zinc-900 
+      {/* Background Grid + Radial Glow */}
+      <div
+        className="absolute inset-0 w-full h-full bg-zinc-900 
         bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),
         linear-gradient(to_bottom,#80808012_1px,transparent_1px)] 
         bg-[size:14px_24px] 
@@ -47,10 +49,12 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           solutions.
         </p>
 
+        {/* Live Registration Count */}
         <p className="text-zinc-400 text-lg font-medium">
           🔥 {registrationCount} teams registered so far
         </p>
 
+        {/* Register Button */}
         <div className="flex flex-col items-center pt-4">
           <button
             onClick={onRegisterClick}
@@ -65,7 +69,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           </span>
         </div>
 
-        {/* Grand Prize Card (styled like PrizeCard grid) */}
+        {/* Grand Prize Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,7 +86,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           <p className="relative text-5xl md:text-6xl font-bold text-yellow-300 mb-4 animate-pulse">
             ₹10,000
           </p>
-          <p className="relative text-white text-lg md:text-xl font-semibold">
+          <p className="relative text-[#3f3f46] text-lg md:text-xl font-semibold">
             Each of the Top 7 Participants will receive this prize!
           </p>
         </motion.div>
