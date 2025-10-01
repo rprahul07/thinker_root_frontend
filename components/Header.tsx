@@ -87,17 +87,23 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
             Prize Pool
           </motion.h2>
 
-          {/* Responsive grid for symmetry */}
+          {/* Responsive grid with 7th prize centered */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
-            {prizes.map((p) => (
-              <PrizeCard
-                key={p.label}
-                label={p.label}
-                amount={p.amount}
-                colorFrom={p.colorFrom}
-                colorTo={p.colorTo}
-              />
-            ))}
+            {prizes.map((p, index) => {
+              // Center the 7th prize
+              const centerClass =
+                index === 6 ? "sm:col-start-2 md:col-start-2 lg:col-start-3" : "";
+              return (
+                <PrizeCard
+                  key={p.label}
+                  label={p.label}
+                  amount={p.amount}
+                  colorFrom={p.colorFrom}
+                  colorTo={p.colorTo}
+                  className={centerClass}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
@@ -113,11 +119,13 @@ const PrizeCard = ({
   amount,
   colorFrom,
   colorTo,
+  className = "",
 }: {
   label: string;
   amount: number;
   colorFrom: string;
   colorTo: string;
+  className?: string;
 }) => {
   return (
     <motion.div
@@ -125,7 +133,7 @@ const PrizeCard = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.05 }}
-      className={`relative rounded-xl p-6 bg-zinc-900/70 backdrop-blur-md border border-zinc-700 shadow-lg`}
+      className={`relative rounded-xl p-6 bg-zinc-900/70 backdrop-blur-md border border-zinc-700 shadow-lg ${className}`}
     >
       <div
         className={`absolute inset-0 rounded-xl bg-gradient-to-br ${colorFrom} ${colorTo} opacity-10 blur-xl`}
