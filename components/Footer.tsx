@@ -54,7 +54,7 @@ const Footer = () => {
 
   const contactDetails = {
     phone: '+91 8590147224',
-    email: 'info@thinkerroot.com',
+    email: 'augustinevadakumchery@lenienttree.com',
   };
 
   return (
@@ -90,10 +90,10 @@ const Footer = () => {
               ))}
             </ul>
 
-            {/* Contact Details */}
-            <div className="mt-6 text-zinc-400">
-              <p>
-                <strong>Phone:</strong>{' '}
+            {/* Contact Details Inline */}
+            <div className="mt-6 text-zinc-400 space-y-1">
+              <p className="flex justify-center md:justify-start items-center space-x-2">
+                <strong>Phone:</strong>
                 <a
                   href={`tel:${contactDetails.phone}`}
                   className="hover:text-red-500 transition-colors duration-300"
@@ -101,8 +101,8 @@ const Footer = () => {
                   {contactDetails.phone}
                 </a>
               </p>
-              <p className="mt-1">
-                <strong>Email:</strong>{' '}
+              <p className="flex justify-center md:justify-start items-center space-x-2">
+                <strong>Email:</strong>
                 <a
                   href={`mailto:${contactDetails.email}`}
                   className="hover:text-red-500 transition-colors duration-300"
