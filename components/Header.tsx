@@ -49,6 +49,11 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           solutions.
         </p>
 
+        {/* Team size info */}
+        <p className="text-red-400 text-lg font-semibold">
+          👥 Team size: Minimum 1, Maximum 4 members
+        </p>
+
         {/* Live Registration Count */}
         <p className="text-zinc-400 text-lg font-medium">
           🔥 {registrationCount} teams registered so far
@@ -67,6 +72,22 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           <span className="mt-2 text-zinc-400 text-lg font-medium">
             ₹250 per Team
           </span>
+        </div>
+
+        {/* WhatsApp Group Info */}
+        <div className="mt-6 bg-zinc-800/70 px-6 py-4 rounded-xl border border-zinc-700 shadow-md max-w-lg">
+          <p className="text-zinc-200 text-lg font-semibold">
+            ✅ After completing registration, make sure to join our{" "}
+            <a
+              href="https://chat.whatsapp.com/GGvb6PcSbxDGQgI3K0L5bI?mode=ems_copy_t"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-400 underline hover:text-green-300"
+            >
+              WhatsApp Group
+            </a>{" "}
+            for all updates and announcements.
+          </p>
         </div>
 
         {/* Grand Prize Card */}
