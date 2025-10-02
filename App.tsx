@@ -95,9 +95,7 @@ const App = () => {
                 />
               ))}
               </div>
-              <div className="mt-8 text-center text-lg md:text-xl font-semibold text-rose-400">
-              (Open Innovation Track also available)
-              </div>
+             
             </Section>
 
             <Section id="special" title="What Makes ThinkerRoot Special?">
