@@ -55,6 +55,7 @@ const Footer = () => {
   const contactDetails = {
     phone: '+91 8590944049',
     email: 'augustinevadakumchery@lenienttree.com',
+    whatsapp: 'https://chat.whatsapp.com/GGvb6PcSbxDGQgI3K0L5bI?mode=ems_copy_t',
   };
 
   return (
@@ -108,6 +109,17 @@ const Footer = () => {
                   className="hover:text-red-500 transition-colors duration-300"
                 >
                   {contactDetails.email}
+                </a>
+              </p>
+              <p className="flex justify-center md:justify-start items-center space-x-2">
+                <strong>WhatsApp:</strong>
+                <a
+                  href={contactDetails.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-red-500 transition-colors duration-300"
+                >
+                  Join Our Group
                 </a>
               </p>
             </div>

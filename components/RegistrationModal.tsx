@@ -17,18 +17,18 @@ const RegistrationModal = ({
   const [paymentProof, setPaymentProof] = useState<File | null>(null);
   const [linkedinLink, setLinkedinLink] = useState<string>("");
 
-  const linkedinText = `𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025 – 𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧 Coming soon
+  const linkedinText = `𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025 – https://thinker-root-2025.vercel.app/
 
 📅 Date: 26th December 2025
 
-LENIENT TREE is delighted to announce the opening of registrations for the 𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025.
+LENIENT TREE  is delighted to announce the opening of registrations for the 𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025.
 As the driving force behind this initiative, LenientTree is committed to fostering a culture of 𝐈𝐧𝐧𝐨𝐯𝐚𝐭𝐢𝐨𝐧 and 𝐄𝐧𝐭𝐫𝐞𝐩𝐫𝐞𝐧𝐞𝐮𝐫𝐬𝐡𝐢𝐩 by providing a platform where:
 
 • Innovators can present transformative ideas
 • Participants can collaborate with peers and industry mentors
 • Teams can develop practical solutions with real-world impact
 
-This ideathon reflects LENIENT TREE vision of enabling students, entrepreneurs, and changemakers to transform ideas into meaningful outcomes.
+This ideathon reflects LENIENT TREE  vision of enabling students, entrepreneurs, and changemakers to transform ideas into meaningful outcomes.
 
 We invite you to join us in shaping the future through innovation.
 
