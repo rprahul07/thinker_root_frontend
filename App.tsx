@@ -14,7 +14,9 @@ import SuccessToast from './components/SuccessToast';
 import PoweredBy from './components/PoweredBy';
 import ClickSpark from './components/ClickSpark';
 import ParticlesBackground from './components/ParticlesBackground';
-import VolunteerModal from './components/VolunteerModal'; // ✅ your new modal
+import VolunteerModal from './components/VolunteerModal'; 
+import Mentor from './components/Mentor';
+
 import { HACKATHON_THEMES, SPECIAL_FEATURES, VISION_POINTS } from './constants';
 
 const App = () => {
@@ -62,6 +64,18 @@ const App = () => {
         <div className="relative z-10">
           <Header onRegisterClick={() => setIsModalOpen(true)} />
           <PoweredBy />
+          <Section id="mentors" title="Our Mentors">
+  <div className="flex justify-center">
+    <Mentor
+      name="Jacob George"
+      role="Technical Lead"
+      description="Technical Lead with 16+ years of expertise in Microsoft technologies, solution design, and DevOps. Known for building highly available IT systems, solving complex problems, and driving innovation through clean, high-quality code. Skilled at automating release pipelines, streamlining SDLC processes, and fostering collaboration. A strong advocate of agile practices with proven ability to remove impediments, manage dependencies, and deliver impactful results."
+      linkedin="https://www.linkedin.com/in/jacobgeorgea?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    />
+  </div>
+</Section>
+
+
 
           <main>
             <EventDetails />

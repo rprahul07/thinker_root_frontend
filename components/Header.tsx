@@ -90,7 +90,7 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           </p>
         </div>
 
-        {/* Grand Prize Card */}
+        {/* Prize Pool Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,13 +102,13 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-red-500 to-orange-400 opacity-20 blur-xl pointer-events-none" />
           
           <h2 className="relative text-white text-3xl md:text-4xl font-extrabold mb-4">
-            Grand Prize
+            🏆 Prize Pool
           </h2>
           <p className="relative text-5xl md:text-6xl font-bold text-yellow-300 mb-4 animate-pulse">
-            ₹10,000
+            ₹50,000
           </p>
           <p className="relative text-[#D4D4D8] text-lg md:text-xl font-semibold">
-            Each of the Top 7 Participants will receive this prize!
+            Team Prizes: ₹10,000 each (for 5 teams)
           </p>
         </motion.div>
       </div>
