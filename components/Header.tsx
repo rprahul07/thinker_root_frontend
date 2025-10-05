@@ -54,10 +54,10 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           👥 Team size: Minimum 1, Maximum 4 members
         </p>
 
-        {/* Live Registration Count */}
+        {/* Live Registration Count
         <p className="text-zinc-400 text-lg font-medium">
           🔥 {registrationCount} teams registered so far
-        </p>
+        </p> */}
 
         {/* Register Button */}
         <div className="flex flex-col items-center pt-4">
