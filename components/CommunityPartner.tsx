@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const CommunityPartner: React.FC = () => {
   return (
@@ -10,13 +11,17 @@ const CommunityPartner: React.FC = () => {
       </h2>
 
       {/* Partner Logo */}
-      <div className="flex justify-center">
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.4 }}
+        className="flex justify-center"
+      >
         <img
           src="/cucek.png"
           alt="CUCEK Community Partner"
-          className="w-[36rem] md:w-[40rem] lg:w-[44rem] object-contain -translate-x-4"
+          className="w-[36rem] md:w-[40rem] lg:w-[44rem] object-contain -translate-x-10"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };
