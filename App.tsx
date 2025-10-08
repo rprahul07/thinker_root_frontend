@@ -16,6 +16,8 @@ import ClickSpark from './components/ClickSpark';
 import ParticlesBackground from './components/ParticlesBackground';
 import VolunteerModal from './components/VolunteerModal'; 
 import Mentor from './components/Mentor';
+import TeamSection from './components/TeamSection';
+import CommunityPartner from './components/CommunityPartner';
 
 import { HACKATHON_THEMES, SPECIAL_FEATURES, VISION_POINTS } from './constants';
 
@@ -74,6 +76,9 @@ const App = () => {
     />
   </div>
 </Section>
+<CommunityPartner />
+
+<TeamSection />
 
 
 
