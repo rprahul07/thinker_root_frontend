@@ -21,14 +21,14 @@ const RegistrationModal = ({
 
 📅 Date: 26th December 2025
 
-LENIENT TREE  is delighted to announce the opening of registrations for the 𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025.
+LENIENT TREE is delighted to announce the opening of registrations for the 𝐓𝐡𝐢𝐧𝐤𝐞𝐫 𝐑𝐨𝐨𝐭 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 2025.
 As the driving force behind this initiative, LenientTree is committed to fostering a culture of 𝐈𝐧𝐧𝐨𝐯𝐚𝐭𝐢𝐨𝐧 and 𝐄𝐧𝐭𝐫𝐞𝐩𝐫𝐞𝐧𝐞𝐮𝐫𝐬𝐡𝐢𝐩 by providing a platform where:
 
-• Innovators can present transformative ideas
-• Participants can collaborate with peers and industry mentors
-• Teams can develop practical solutions with real-world impact
+• Innovators can present transformative ideas  
+• Participants can collaborate with peers and industry mentors  
+• Teams can develop practical solutions with real-world impact  
 
-This ideathon reflects LENIENT TREE  vision of enabling students, entrepreneurs, and changemakers to transform ideas into meaningful outcomes.
+This ideathon reflects LENIENT TREE's vision of enabling students, entrepreneurs, and changemakers to transform ideas into meaningful outcomes.
 
 We invite you to join us in shaping the future through innovation.
 
@@ -63,7 +63,6 @@ We invite you to join us in shaping the future through innovation.
     formData.append("experience", (form as any).experience.value);
     formData.append("skills", (form as any).skills.value);
     formData.append("motivation", (form as any).motivation.value);
-
     formData.append("linkedinLink", linkedinLink);
     formData.append("payment_screenshot", paymentProof);
 
@@ -121,7 +120,6 @@ We invite you to join us in shaping the future through innovation.
           </h2>
 
           <div className="mt-4 flex flex-col md:flex-row gap-4 justify-center">
-            {/* Copy Content Button */}
             <button
               onClick={handleCopy}
               className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300"
@@ -129,16 +127,6 @@ We invite you to join us in shaping the future through innovation.
               📋 Copy LinkedIn Post Content
             </button>
 
-            {/* Download Template */}
-            <a
-              href={`/poster.png`}
-              download
-              className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300"
-            >
-              📥 Download Post Template
-            </a>
-
-            {/* Share to LinkedIn */}
             <a
               href={`https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(
                 linkedinText
@@ -162,25 +150,13 @@ We invite you to join us in shaping the future through innovation.
                 <label htmlFor="firstName" className={labelClasses}>
                   First Name *
                 </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  required
-                  className={inputClasses}
-                />
+                <input type="text" id="firstName" name="firstName" required className={inputClasses} />
               </div>
               <div>
                 <label htmlFor="lastName" className={labelClasses}>
                   Last Name *
                 </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  required
-                  className={inputClasses}
-                />
+                <input type="text" id="lastName" name="lastName" required className={inputClasses} />
               </div>
             </div>
           </fieldset>
@@ -193,25 +169,13 @@ We invite you to join us in shaping the future through innovation.
                 <label htmlFor="email" className={labelClasses}>
                   Email Address *
                 </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className={inputClasses}
-                />
+                <input type="email" id="email" name="email" required className={inputClasses} />
               </div>
               <div>
                 <label htmlFor="phone" className={labelClasses}>
                   Phone Number *
                 </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  className={inputClasses}
-                />
+                <input type="tel" id="phone" name="phone" required className={inputClasses} />
               </div>
             </div>
           </fieldset>
@@ -224,23 +188,13 @@ We invite you to join us in shaping the future through innovation.
                 <label htmlFor="organization" className={labelClasses}>
                   Organization/University
                 </label>
-                <input
-                  type="text"
-                  id="organization"
-                  name="organization"
-                  className={inputClasses}
-                />
+                <input type="text" id="organization" name="organization" className={inputClasses} />
               </div>
               <div>
                 <label htmlFor="role" className={labelClasses}>
                   Role/Position
                 </label>
-                <input
-                  type="text"
-                  id="role"
-                  name="role"
-                  className={inputClasses}
-                />
+                <input type="text" id="role" name="role" className={inputClasses} />
               </div>
             </div>
           </fieldset>
@@ -253,12 +207,7 @@ We invite you to join us in shaping the future through innovation.
                 <label htmlFor="theme" className={labelClasses}>
                   Preferred Theme *
                 </label>
-                <select
-                  id="theme"
-                  name="theme"
-                  required
-                  className={inputClasses}
-                >
+                <select id="theme" name="theme" required className={inputClasses}>
                   <option value="">Select a theme...</option>
                   {HACKATHON_THEMES.map((theme) => (
                     <option key={theme.title} value={theme.title}>
@@ -271,11 +220,7 @@ We invite you to join us in shaping the future through innovation.
                 <label htmlFor="experience" className={labelClasses}>
                   Experience Level
                 </label>
-                <select
-                  id="experience"
-                  name="experience"
-                  className={inputClasses}
-                >
+                <select id="experience" name="experience" className={inputClasses}>
                   <option value="">Select level...</option>
                   <option value="Beginner">Beginner</option>
                   <option value="Intermediate">Intermediate</option>
@@ -338,7 +283,7 @@ We invite you to join us in shaping the future through innovation.
             </div>
           </fieldset>
 
-          {/* Payment */}
+          {/* Payment Section */}
           <fieldset>
             <legend className={legendClasses}>Payment *</legend>
             <div className="mt-4 space-y-4">
@@ -367,13 +312,15 @@ We invite you to join us in shaping the future through innovation.
                 className="text-zinc-300"
               />
 
-              <p className="text-red-400 text-xs mt-2">
-                ⚠️ Any fraudulent or irrelevant activities will result in a
-                permanent ban from ThinkerRoot 2025.
-              </p>
+              {/* ⚠️ Warning and Terms */}
+              <div className="text-xs text-red-400 space-y-1 mt-2">
+                <p>⚠️ Any fraudulent or irrelevant activities will result in a permanent ban from ThinkerRoot 2025.</p>
+                <p>📜 <strong>Terms & Conditions:</strong> Funds will not be fully paid back after payment.</p>
+              </div>
             </div>
           </fieldset>
 
+          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105"

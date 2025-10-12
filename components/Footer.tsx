@@ -147,6 +147,14 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Terms & Conditions */}
+        <div className="mt-8 text-center md:text-left text-zinc-400 text-sm">
+          <p>
+            <strong>Terms & Conditions:</strong> Payments once made cannot be refunded.
+          </p>
+        </div>
+
+        {/* Copyright */}
         <div className="mt-12 border-t border-zinc-800 pt-8 text-center text-zinc-500 text-sm">
           <p>&copy; {new Date().getFullYear()} ThinkerRoot Ideathon. All rights reserved.</p>
         </div>
