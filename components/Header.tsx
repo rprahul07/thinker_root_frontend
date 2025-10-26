@@ -54,6 +54,11 @@ const Header = ({ onRegisterClick }: HeaderProps) => {
           👥 Team size: Minimum 1, Maximum 4 members
         </p>
 
+        {/* Registration Deadline */}
+        <p className="text-yellow-400 text-lg font-bold animate-pulse">
+          🗓️ Registration Extended Till: <span className="underline">December 15, 2025</span>
+        </p>
+
         {/* Live Registration Count
         <p className="text-zinc-400 text-lg font-medium">
           🔥 {registrationCount} teams registered so far

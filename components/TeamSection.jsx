@@ -16,7 +16,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: 'Rahul',
-    role: 'Backend Developer',
+    role: 'BACKEND DEVELOPER',
     image: '/Rahul.png',
     linkedin: 'https://linkedin.com/in/rahulrp07',
   },
